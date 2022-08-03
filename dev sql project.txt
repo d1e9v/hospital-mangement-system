@@ -1,0 +1,233 @@
+create table doctor_s(D_id varchar(32 )primary key,D_name varchar(22),D_gender varchar(33),D_email varchar(35) unique);
+
+insert into doctor_s values('D001','Dr.Chetna','Female','chetnakaur2@gmail.com');
+insert into doctor_s values('D002','Dr.Rohit','Male','rohitmalik1@gmail.com');
+insert into doctor_s values('D003','Dr.Abhishek','Male','abhisheksingh4@gmail.com');
+insert into doctor_s values('D004','Dr.Anchal','Female','anchalbura21@gmail.com');
+insert into doctor_s values('D005','Dr.Sachin','Male','sachinsindher6@gmail.com');
+insert into doctor_s values('D006','Dr.Shallu','Female','shallubura9@gmail.com');
+insert into doctor_s values('D007','Dr.Sunali','Female','sunalisindher5@gmail.com');
+insert into doctor_s values('D008','Dr.Ankul','Male','ankulsingh2@gmail.com');
+insert into doctor_s values('D009','Dr.Pardeep','Male','pardeepkumar7@gmail.com');
+insert into doctor_s values('D0010','Dr.Manjul','Female','manjulyadav5@gmail.com');
+ 
+select * from doctor_s 
+
+SELECT DISTINCT D_id FROM doctor_s ;
+
+
+select D_email from doctor_s WHERE D_name LIKE '%l'
+
+
+
+
+
+
+
+
+
+
+
+
+create table patient_s(P_name varchar(32),P_id varchar(32) primary key, P_age int, P_mobile_no int NOT NULL,P_gender varchar(32),P_adress varchar(32));
+drop table patient_s
+insert into patient_s values('Shiv','P001',21,1988765443,'Male','Sector59 phase4 Chandigarh');
+insert into patient_s values('Bhuvesh','P002',16,1934738628,'Male','Manas Residency Thane Mumbai');
+insert into patient_s values('Dashvi','P003',25,8343878998,'Female','Mylapore Chennai TamilNadu');
+insert into patient_s values('Mohit','P004',23,8845483886,'Male',' Kalighat Kolkata West Bengal');
+insert into patient_s values('Amanpreet','P005',29,9976532456,'Female','Khurd Mansa Punjab');
+insert into patient_s values('Rakesh','P006',53,7643258965,'Male','Sahebpara Colony Katihar Bihar');
+insert into patient_s values('Parveen','P007',47,6234469065,'Male','Dlf Galaria Gurgao Haryana');
+insert into patient_s values('Ragini','P008',36,6975431580,'Female','Tx Dallas Texas US');
+insert into patient_s values('Anjani','P009',30,4238942379,'Female',' Modern valley Mohali Punjab');
+insert into patient_s values('Abhishek','P010',60,9815484634,'Male','Amar complex Vadodara Gujarat');
+
+
+
+select * from  patient_s
+
+SELECT AVG( P_age)
+FROM patient_s 
+WHERE P_gender ='Male'
+
+
+SELECT AVG( P_age)
+FROM patient_s 
+WHERE P_gender ='Female'
+
+SELECT COUNT(P_gender)
+FROM Patient_s where P_gender='Male';
+
+SELECT COUNT(P_gender)
+FROM Patient_s where P_gender='Female';
+
+SELECT COUNT(P_gender)
+FROM Patient_s;
+
+SELECT * FROM Patient_s
+WHERE P_name LIKE 'A%';
+
+SELECT * FROM Patient_s
+WHERE P_age  IN (21,16,25);
+
+SELECT * FROM Patient_s
+ORDER BY P_age DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create table appointmen_t(P_name varchar(32),appointment_id varchar(23) primary key,appointment_date DATE,start_time TIMESTAMP WITH LOCAL TIME ZONE,end_time TIMESTAMP WITH LOCAL TIME ZONE);
+
+
+insert into appointmen_t values('shiv','A001',TO_DATE('2022/07/23 ', 'yyyy/mm/dd'), to_date( '2022/07/23 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/07/24  03:00:15','yyyy/mm/dd hh24:mi:ss'));
+insert into appointmen_t values('Bhuvesh','A002',TO_DATE('2022/07/24 ', 'yyyy/mm/dd'), to_date( '2022/07/24 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/07/25  03:00:15','yyyy/mm/dd hh24:mi:ss'));
+  insert into appointmen_t values('Dashvi','A003',TO_DATE('2022/07/25 ', 'yyyy/mm/dd'), to_date( '2022/07/25 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/07/26  03:00:15','yyyy/mm/dd hh24:mi:ss'));
+  insert into appointmen_t values('Mohit','A004',TO_DATE('2022/07/26 ', 'yyyy/mm/dd'), to_date( '2022/07/26 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/07/27  03:00:15','yyyy/mm/dd hh24:mi:ss'));
+  insert into appointmen_t values('Amanpreet','A005',TO_DATE('2022/07/27 ', 'yyyy/mm/dd'), to_date( '2022/07/27 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/07/28  03:00:15','yyyy/mm/dd hh24:mi:ss'));
+  insert into appointmen_t values('Rakesh','A006',TO_DATE('2022/07/28 ', 'yyyy/mm/dd'), to_date( '2022/07/28 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/07/29 03:00:15','yyyy/mm/dd hh24:mi:ss'));
+  insert into appointmen_t values('parveen','A007',TO_DATE('2022/07/29 ', 'yyyy/mm/dd'), to_date( '2022/07/29 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/07/30  03:00:15','yyyy/mm/dd hh24:mi:ss'));
+  insert into appointmen_t values('Ragini','A008',TO_DATE('2022/07/30 ', 'yyyy/mm/dd'), to_date( '2022/07/30 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/08/01  03:00:15','yyyy/mm/dd hh24:mi:ss'));
+  insert into appointmen_t values('Anjani','A009',TO_DATE('2022/07/21 ', 'yyyy/mm/dd'), to_date( '2022/07/21 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/07/22  03:00:15','yyyy/mm/dd hh24:mi:ss'));
+  insert into appointmen_t values('Abhishek','A010',TO_DATE('2022/07/22 ', 'yyyy/mm/dd'), to_date( '2022/07/22 02:00:10','yyyy/mm/dd hh24:mi:ss'),to_date('2022/07/22  03:00:15','yyyy/mm/dd hh24:mi:ss'));
+ select * from appointmen_t
+
+
+
+create table medical_history(M_id varchar(21) primary key, P_id varchar(21),D_id varchar(21),P_surgeries varchar(31),P_date date,P_conditions varchar(51), 
+foreign key (P_id) references patient_s(P_id), foreign key (D_id) references Doctor_s(D_id));
+
+
+
+insert into medical_history values('M001','P001','D001','Cataract',to_date('07-Jan-2022','dd-mm-YYYY'),'Intermediate');
+insert into medical_history values('M002','P002','D002','Heart Bypass',to_date('19-Dec-2021','dd-mm-yyyy'),'Critical');
+insert into medical_history values('M003','P003','D003','Hip Replacement',to_date('10-Oct-2019','dd-mm-yyyy'),'Intermediate');
+insert into medical_history values('M004','P004','D004','Carotid',to_date('02-May-2020','dd-mm-yyyy'),'Normal');
+insert into medical_history values('M005','P005','D005','Heart Bypass',to_date('28-Sep-2017','dd-mm-yyyy'),'Critical');
+insert into medical_history values('M006','P006','D006','Hip Replacement',to_date('20-Feb-2021','dd-mm-yyyy'),'Intermediate');
+insert into medical_history values('M007','P007','D007','Carotid',to_date('11-Jan-2022','dd-mm-yyyy'),'Normal');
+insert into medical_history values('M008','P008','D008','Cataract',to_date('09-Aug-2018','dd-mm-yyyy'),'Critical');
+insert into medical_history values('M009','P009','D009','Hip Replacement',to_date('07-April-2021','dd-mm-yyyy'),'Intermediate');
+insert into medical_history values('M010','P010','D0010','Cataract',to_date('21-Aug-2020','dd-mm-yyyy'),'Critical');
+select * from medical_history
+
+
+create table patient_s_VS_appointmen_t(concern varchar(45),symptoms  varchar(76),P_id varchar(32),appointment_id varchar(23),foreign key (P_id) references patient_s(P_id),foreign key (appointment_id) references appointmen_t(appointment_id));
+insert into patient_s_VS_appointmen_t values('eye problem','headache','P001','A001');
+insert into patient_s_VS_appointmen_t values('heart problem','heart pain','P002','A002');
+insert into patient_s_VS_appointmen_t values('hip problem','sitting pain','P003','A003');
+insert into patient_s_VS_appointmen_t values('eye problem','headache','P004','A004');
+insert into patient_s_VS_appointmen_t values('heart problem','heart pain','P005','A005');
+insert into patient_s_VS_appointmen_t values('hip problem','sitting pain','P006','A006');
+insert into patient_s_VS_appointmen_t values('eye problem','headache','P007','A007');
+insert into patient_s_VS_appointmen_t values('eye problem','headache','P008','A008');
+insert into patient_s_VS_appointmen_t values('eye problem','headache','P009','A009');
+insert into patient_s_VS_appointmen_t values('hip problem','sitting pain','P010','A010');
+select * from patient_s_VS_appointmen_t
+
+
+create table appointmen_t_VS_doctor_s(diagnose varchar(76),perception varchar (56),appointment_id varchar(23),D_id varchar(21), foreign key (D_id) references Doctor_s(D_id),foreign key (appointment_id) references appointmen_t(appointment_id));
+
+insert into  appointmen_t_VS_doctor_s values('examine your lens ','Quixin','A001','D001')
+insert into  appointmen_t_VS_doctor_s values(' physical examination and blood tests','Beta-blockers','A002','D002')
+
+insert into  appointmen_t_VS_doctor_s values('Osteoarthritis','Motrin','A003','D003')
+
+insert into  appointmen_t_VS_doctor_s values('examine your lens ','Quixin','A004','D004')
+
+insert into  appointmen_t_VS_doctor_s values(' physical examination and blood tests','Beta-blockers','A005','D005')
+
+insert into  appointmen_t_VS_doctor_s values('Osteoarthritis','Motrin','A006','D006')
+
+insert into  appointmen_t_VS_doctor_s values('examine your lens ','Quixin','A007','D007')
+insert into  appointmen_t_VS_doctor_s values('examine your lens ','Quixin','A008','D008')
+insert into  appointmen_t_VS_doctor_s values('Osteoarthritis','Motrin','A009','D009')
+insert into  appointmen_t_VS_doctor_s values('examine your lens ','Quixin','A010','D0010')
+
+select * from appointmen_t_VS_doctor_s
+
+create table bill_s(bill_no varchar(10) primary key, bill_date date, P_id varchar(32),amoun_t int, foreign key (p_id) references patient_s(p_id));
+drop table bill_s
+
+insert into bill_s values('B001', to_date('2022/11/29','YYYY/MM/DD'), 'P001',12345);
+insert into bill_s values('B002', to_date('2022/11/22','YYYY/MM/DD'), 'P002',43235);
+
+insert into bill_s values('B003', to_date('2022/11/21','YYYY/MM/DD'), 'P003',743567);
+
+insert into bill_s values('B004', to_date('2022/11/12','YYYY/MM/DD'), 'P004',2433567);
+
+insert into bill_s values('B005', to_date('2022/11/15','YYYY/MM/DD'), 'P005',53443657);
+
+insert into bill_s values('B006', to_date('2022/11/16','YYYY/MM/DD'), 'P006',45678);
+insert into bill_s values('B007', to_date('2022/11/17','YYYY/MM/DD'), 'P007',56799033);
+insert into bill_s values('B008', to_date('2022/11/18','YYYY/MM/DD'), 'P008',334678);
+insert into bill_s values('B009', to_date('2022/11/20','YYYY/MM/DD'), 'P009',9865321);
+insert into bill_s values('B010', to_date('2022/11/14','YYYY/MM/DD'), 'P010',4567899);
+select * from bill_s 
+
+
+SELECT MAX(amoun_t ) AS Largestamount
+FROM bill_s ;
+
+SELECT Min(amoun_t ) AS Loweramount
+FROM bill_s ;
+
+SELECT SUM(amoun_t)
+FROM bill_s  ;
+
+
+drop  table bill_ss  
+
+
+
+
+
+create table schedule_s(S_id varchar(32) primary key,S_day varchar(42),S_breaks varchar(52),appointment_id varchar(23),D_id varchar(32 ),foreign key (D_id) references Doctor_s(D_id),foreign key (appointment_id) references appointmen_t(appointment_id));
+drop table schedule_s
+insert into schedule_s values('S001','Monday','1hr','A001','D001')
+insert into schedule_s values('S002','Tuesday','1hr','A002','D002')
+insert into schedule_s values('S003','wednesday','1hr','A003','D003')
+insert into schedule_s values('S004','Thrusday','1hr','A004','D004')
+insert into schedule_s values('S005','Friday','1hr','A005','D005')
+insert into schedule_s values('S006','saturday','1hr','A006','D006')
+insert into schedule_s values('S007','Monday','1hr','A007','D007')
+insert into schedule_s values('S008','Tuesday','1hr','A008','D008')
+insert into schedule_s values('S009','wednesday','1hr','A009','D009')
+insert into schedule_s values('S010','wednesday','1hr','A010','D0010')
+
+Select * from schedule_s
+
+
+
+
+select patient_s.P_name,appointmen_t.appointment_date,schedule_s.S_day from patient_s inner join patient_s_VS_appointmen_t  on patient_s.P_id=patient_s_VS_appointmen_t.p_id inner join appointmen_t on patient_s_VS_appointmen_t.appointment_id=appointmen_t.appointment_id inner join schedule_s on appointmen_t.appointment_id=schedule_s.appointment_id ;
+
+
+
+select patient_s.P_name,bill_s.amoun_t,bill_s.bill_date from patient_s inner join bill_s on patient_s.P_id=bill_s.P_id;
+
+
+select patient_s.P_name,patient_s_VS_appointmen_t.symptoms,appointmen_t.appointment_id, doctor_s.D_name from patient_s inner join  patient_s_VS_appointmen_t  on patient_s.P_id=patient_s_VS_appointmen_t.p_id inner join appointmen_t on patient_s_VS_appointmen_t.appointment_id=appointmen_t.appointment_id inner join appointmen_t_VS_doctor_s on appointmen_t.appointment_id=appointmen_t_VS_doctor_s.appointment_id inner join doctor_s on appointmen_t_VS_doctor_s.D_id=doctor_s.D_id;
+
+
+
+
+select doctor_s.D_id,medical_history.M_id,medical_history.P_surgeries from medical_history inner join doctor_s on doctor_s.D_id=medical_history.D_id;
+
+select doctor_s.D_id,schedule_s.S_day, doctor_s.D_name from doctor_s inner join schedule_s on  doctor_s.D_id=schedule_s.D_id
+ 
+
+select patient_s.P_name,patient_s.P_age,patient_s.P_id,medical_history.M_id,medical_history.P_conditions from patient_s inner join medical_history on
+patient_s.P_id=medical_history.P_id ;
+
+
+
